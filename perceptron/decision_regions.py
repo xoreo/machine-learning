@@ -30,8 +30,8 @@ def plot_decision_regions(X, y, classifier, resolution = 0.02):
         ).T
     )
 
-    # Reshape the vector Z to be the same size (same number of columns) as the
-    # two-feature matrix so that it can be
+    # Reshape the vector Z to be the same size (same number of columns)
+    # as the two-feature matrix so that it can be
     # graphed & predicted just like the Iris training subset
     Z = Z.reshape(xx1.shape)
 
@@ -43,7 +43,8 @@ def plot_decision_regions(X, y, classifier, resolution = 0.02):
         cmap = colorMap
     )
 
-    # Plot the limits of the datasets
+    # Plot the limits of the datasets. Why? No clue.
+    # Doesn't look like there's much of a difference with or w/o
     plt.xlim(xx1.min(), xx1.max())
     plt.ylim(xx2.min(), xx2.max())
 
