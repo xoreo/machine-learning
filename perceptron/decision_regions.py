@@ -10,12 +10,18 @@ def plot_decision_regions(X, y, classifier, resolution = 0.02):
     colors = ("red", "blue", "lightgreen", "gray", "cyan")
     colorMap = ListedColormap(colors[:len(np.unique(y))])
 
-    # Plot the decision surface
+    # Plot the decision surface (setting the boundries of the graph)
     x1_min = X[:, 0].min() - 1 # The minimum value for feature 0,  the sepal length,  of the setosa data
     x1_max = X[:, 0].max() + 1 # The maximum value for feature 0, the sepal length, of the versicolor data
 
     x2_min = X[:, 1].min() - 1 # The minimum value for feature 1, the petal length, of the versicolor data
     x2_max = X[:, 1].max() + 1 # The maximum value for feature 1, the petal length, of the versicolor data
+
+    print("x1_min: " + str(x1_min))
+    print("x1_max: " + str(x1_max))
+
+    print("x2_min: " + str(x2_min))
+    print("x2_max: " + str(x2_max))
 
     # Create a meshgrid, the aligning coordinates from two vectors, x1 and x2
     xx1, xx2 = np.meshgrid(

@@ -45,13 +45,11 @@ class Perceptron(object):
             size = 1 + X.shape[1] # Add one for the bias column
         )
 
-        print(type(self.w_))
-
         self.errors_ = []
 
         # Run the algorithm n_iter times
         for i in range(self.n_iter):
-            print("Generation " + str(i))
+            print("generation " + str(i))
             errors = 0 # The amount of incorrect predictions
 
             for xi, target in zip(X, y): # Iterate through the data

@@ -55,7 +55,7 @@ plt.show()
 # Initialize the perceptron algorithm
 perceptron = Perceptron(
     eta = 0.1,
-    n_iter = 10
+    n_iter = 100
 )
 
 # Train the algorithm
