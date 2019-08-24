@@ -30,6 +30,7 @@ class AdalineGradientDescent(Perceptron):
             errors = (y - output) # Update the errors (could be (y - net_input)
 
             """ begin gradient descent """
+            # This code updates the weights based on the entire data set
             self.w_[1:] += self.eta * X.T.dot(errors) # Update the weight vector
             
             # Sum of squared errors
@@ -54,7 +55,6 @@ class AdalineGradientDescent(Perceptron):
     """
     def predict(self, X):
         return np.where(
-            self.activation(
-                self.net_input(X) >= 0.0, 1, -1
-            )
+            self.activation(self.net_input(X))
+            >= 0.0, 1, -1
         )

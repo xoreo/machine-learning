@@ -18,7 +18,7 @@ figure, axes = plt.subplots(
 
 # Initialize the algorithm for learning rate = 0.01
 adaline1 = AdalineGradientDescent(
-    n_iter = 10,
+    n_iter = 10000,
     eta = 0.01
 )
 
@@ -39,7 +39,7 @@ axes[0].set_title("Adaline @ eta = " + str(adaline1.eta))
 
 # Initialize the algorithm for learning rate = 0.0001
 adaline2 = AdalineGradientDescent(
-    n_iter = 10,
+    n_iter = 10000,
     eta = 0.0001
 )
 
@@ -59,4 +59,21 @@ axes[1].set_ylabel("SSE")
 axes[1].set_title("Adaline @ eta = " + str(adaline2.eta))
 
 # Show the plot
+plt.show()
+
+""" -- graph decision regions -- """
+
+# Plot the decision regions in order to see the data predictions (better)
+plot_decision_regions(
+    lc.X, lc.y, # The data
+    classifier = adaline2
+)
+
+# Display the axes data
+plt.xlabel("sepal length")
+plt.ylabel("petal length")
+plt.title("adaline2")
+plt.legend(loc = "upper left")
+
+# Display the graph
 plt.show()
